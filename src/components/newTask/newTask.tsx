@@ -4,6 +4,15 @@ import { DialogClose, DialogTitle } from "@components/ui/dialog";
 import "./styles.scss"
 import { TasksContext } from "@context/TasksContext";
 import { DialogContext } from "@context/DialogContext";
+import { useForm } from "react-hook-form";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from "zod";
+
+const createTaskForm = z.object({
+  taskTitle: z.string().min(3, 'Insira no mínimo 3 caracteres para salvar a tarefa'),
+})
+
+type CreateTaskForm = z.infer<typeof createTaskForm>
 
 export function NewTask() {
 
@@ -11,6 +20,15 @@ export function NewTask() {
   const { setIsDialogOpen } = useContext(DialogContext)
 
   const [newTask, setNewTask] = useState('');
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<CreateTaskForm>({
+    resolver: zodResolver(createTaskForm),
+  })
 
   const handleAddTask = () => {
     if (typeof window !== 'undefined') {
@@ -26,22 +44,26 @@ export function NewTask() {
 
       setNewTask('');
       setIsDialogOpen(false)
+      reset()
     }
   };
 
   return (
     <div className="newTaskForm">
       <DialogTitle>Nova Tarefa</DialogTitle>
-      <div className="newTaskField">
-        <label className="taskTitle" htmlFor="taskTitle">Título</label>
-        <input className="inputTaskName" type="text" placeholder="Digite" onChange={(e) => setNewTask(e.target.value)} />
-      </div>
-      <div className="newTaskButtons">
-        <DialogClose asChild>
-          <Button buttonStyle="seconday">Cancelar</Button>
-        </DialogClose>
-        <Button onClick={handleAddTask}>Adicionar</Button>
-      </div>
+      <form onSubmit={handleSubmit(handleAddTask)}>
+        <div className="newTaskField">
+          <label className="taskTitle" htmlFor="taskTitle">Título</label>
+          <input {...register('taskTitle')} className="inputTaskName" type="text" placeholder="Digite" onChange={(e) => setNewTask(e.target.value)} />
+          {errors.taskTitle && <span className="inputError">*{errors.taskTitle.message}</span>}
+        </div>
+        <div className="newTaskButtons">
+          <DialogClose asChild>
+            <Button buttonStyle="seconday">Cancelar</Button>
+          </DialogClose>
+          <Button type="submit">Adicionar</Button>
+        </div>
+      </form>
     </div>
   )
 }
