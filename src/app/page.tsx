@@ -15,9 +15,11 @@ export default function Home() {
   const { setTasks } = useContext(TasksContext)
 
   useEffect(() => {
-    const storedTasks = localStorage.getItem('tasks');
-    if (storedTasks) {
-      setTasks(JSON.parse(storedTasks));
+    if (typeof window !== 'undefined') {
+      const storedTasks = localStorage.getItem('tasks');
+      if (storedTasks) {
+        setTasks(JSON.parse(storedTasks));
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

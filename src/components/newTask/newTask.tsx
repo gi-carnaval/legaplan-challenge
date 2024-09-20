@@ -13,18 +13,20 @@ export function NewTask() {
   const [newTask, setNewTask] = useState('');
 
   const handleAddTask = () => {
-    const nextIdTask = idTaskList + 1
-    const newTaskObj = { id: nextIdTask, title: newTask, completed: false }
+    if (typeof window !== 'undefined') {
+      const nextIdTask = idTaskList + 1
+      const newTaskObj = { id: nextIdTask, title: newTask, completed: false }
 
-    setIdTaskList(nextIdTask)
-    localStorage.setItem('lastTaskId', JSON.stringify(nextIdTask));
+      setIdTaskList(nextIdTask)
+      localStorage.setItem('lastTaskId', JSON.stringify(nextIdTask));
 
-    const updatedTasks = [...tasks, newTaskObj];
-    setTasks(updatedTasks);
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      const updatedTasks = [...tasks, newTaskObj];
+      setTasks(updatedTasks);
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
 
-    setNewTask('');
-    setIsDialogOpen(false)
+      setNewTask('');
+      setIsDialogOpen(false)
+    }
   };
 
   return (

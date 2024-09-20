@@ -11,10 +11,12 @@ export function DeleteTask() {
   const { setIsDialogOpen } = useContext(DialogContext)
 
   const handleDeleteTask = (id: number) => {
-    const updatedTasks = tasks.filter((task) => task.id !== id);
-    setTasks(updatedTasks);
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-    setIsDialogOpen(false)
+    if (typeof window !== 'undefined') {
+      const updatedTasks = tasks.filter((task) => task.id !== id);
+      setTasks(updatedTasks);
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      setIsDialogOpen(false)
+    }
   };
 
   return (

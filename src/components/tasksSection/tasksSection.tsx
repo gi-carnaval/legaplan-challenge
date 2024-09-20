@@ -21,11 +21,13 @@ export function TasksSection() {
   const completedTasks = tasks.filter((task) => task.completed === true)
 
   const handleToggleComplete = (id: number) => {
-    const updatedTasks = tasks.map((task) =>
-      task.id === id ? { ...task, completed: !task.completed } : task
-    );
-    setTasks(updatedTasks);
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+    if (typeof window !== 'undefined') {
+      const updatedTasks = tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      );
+      setTasks(updatedTasks);
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+    }
   };
 
   const handleOpenDeleteDialog = () => {

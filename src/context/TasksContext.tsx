@@ -23,7 +23,7 @@ export const TasksContext = createContext<TasksContextType>({
 })
 
 export function TasksProvider({ children }: { children: React.ReactNode }) {
-  const storedLastId = localStorage.getItem('lastTaskId');
+  const storedLastId = typeof window !== 'undefined' ? localStorage.getItem('lastTaskId') : '';
   const lastTaskId = storedLastId ? JSON.parse(storedLastId) : -1;
   const nextTaskId = Math.max(lastTaskId, 0);
 
