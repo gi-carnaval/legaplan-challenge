@@ -1,7 +1,7 @@
 import focalPointLogo from '@assets/logo.png'
 import Image from 'next/image';
 import "./styles.scss"
-import ptBr from 'dayjs/locale/pt-BR'
+import ptBr from 'dayjs/locale/pt-br'
 import dayjs from 'dayjs';
 
 dayjs.locale(ptBr)

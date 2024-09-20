@@ -6,7 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   buttonStyle?: 'primary' | 'seconday' | 'delete'
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, buttonStyle = 'primary', ...props }, ref) => {
     return (
       <button ref={ref} className={`addNewTaksButton ${buttonStyle}`} {...props} >
@@ -15,3 +15,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     )
   }
 )
+
+Button.displayName = 'Button';
+
+export { Button };

@@ -19,6 +19,7 @@ export default function Home() {
     if (storedTasks) {
       setTasks(JSON.parse(storedTasks));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
