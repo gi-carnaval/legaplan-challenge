@@ -1,6 +1,6 @@
 # Tasks Manager
 
-![Next.js](https://img.shields.io/badge/Next.js-12.1.0-blue) ![SCSS](https://img.shields.io/badge/SCSS-3.9.3-ff69b4)
+![Next.js](https://img.shields.io/badge/Next.js-14.2.12-blue) ![SCSS](https://img.shields.io/badge/SCSS-1.79.1-ff69b4)
 
 Um aplicativo simples para gerenciar suas tarefas diárias, criado com **Next.js** e **SCSS**. O projeto permite criar, visualizar, marcar como concluídas e excluir tarefas de forma prática.
 
@@ -11,8 +11,6 @@ Um aplicativo simples para gerenciar suas tarefas diárias, criado com **Next.js
 - [Tecnologias](#tecnologias)
 - [Instalação](#instalação)
 - [Como Usar](#como-usar)
-- [Como Contribuir](#como-contribuir)
-- [Licença](#licença)
 
 ## Visão Geral
 
