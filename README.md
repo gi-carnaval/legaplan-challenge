@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tasks Manager
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-12.1.0-blue) ![SCSS](https://img.shields.io/badge/SCSS-3.9.3-ff69b4)
 
-First, run the development server:
+Um aplicativo simples para gerenciar suas tarefas diárias, criado com **Next.js** e **SCSS**. O projeto permite criar, visualizar, marcar como concluídas e excluir tarefas de forma prática.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Índice
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Visão Geral](#visão-geral)
+- [Recursos](#recursos)
+- [Tecnologias](#tecnologias)
+- [Instalação](#instalação)
+- [Como Usar](#como-usar)
+- [Como Contribuir](#como-contribuir)
+- [Licença](#licença)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Visão Geral
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Este projeto foi desenvolvido para demonstrar o uso de **Next.js** com o novo App Router, integração com **SCSS** e uso de armazenamento local (localStorage ou outra abordagem). Ele fornece uma interface simples para gerenciar suas tarefas diárias, permitindo adicionar, marcar como concluídas e excluir tarefas.
 
-## Learn More
+## Recursos
 
-To learn more about Next.js, take a look at the following resources:
+- **Adicionar Tarefa:** Crie novas tarefas com título.
+- **Marcar como Concluída:** Marque tarefas como concluídas usando a checkbox.
+- **Excluir Tarefa:** Exclua tarefas indesejadas com o botão de exclusão.
+- **Armazenamento Local:** Armazena as tarefas localmente (localStorage).
+- **Interface Responsiva:** Compatível com dispositivos móveis e desktop.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tecnologias
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-## Deploy on Vercel
+- **Next.js** – Framework React para aplicações server-side rendering (SSR) e estáticas.
+- **React.js** – Biblioteca para a construção de interfaces de usuário.
+- **SCSS** – CSS pré-processado para estilização eficiente.
+- **Radix UI** – Componentes acessíveis e customizáveis.
+- **TypeScript** – Suporte a tipagem estática.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Instalação
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Pré-requisitos
+
+Antes de começar, você precisará ter o **Node.js** instalado na sua máquina. Você pode instalar o Node.js [aqui](https://nodejs.org).
+
+### Passos para instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/gi-carnaval/legaplan-challenge.git
+
+2. Navegue até o diretório do projeto:
+
+   ```bash
+   cd legaplan-challenge
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+
+4. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+
+5. Abra o navegador em http://localhost:3000 para visualizar o aplicativo.
+
+## Como Usar
+
+- Adicionar nova tarefa: Use o botão "Nova Tarefa" para criar uma nova tarefa.
+- Marcar como concluída: Clique na checkbox ao lado de cada tarefa para marcá-la como concluída.
+- Excluir tarefa: Clique no ícone de lixeira para excluir uma tarefa.
+- Persistência: Suas tarefas serão armazenadas localmente e carregadas automaticamente na próxima visita.

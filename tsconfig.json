@@ -30,13 +30,13 @@
         "./src/assets/*"
       ],
       "@context/*": [
-        "./src/app/src/context/*"
+        "./src/context/*"
       ],
       "@ui/*": [
-        "./src/app/src/components/ui/*"
+        "src/components/ui/*"
       ],
       "@components/*": [
-        "./src/app/src/components/*"
+        "src/components/*"
       ]
     }
   },

@@ -3,8 +3,8 @@ import trashIcon from '@assets/trash.svg'
 import './styles.scss'
 import { TasksProps } from "@components/tasksSection";
 import { useContext } from "react";
-import { TasksContext } from "@app/src/context/TasksContext";
-import { DialogContext } from "@app/src/context/DialogContext";
+import { DialogContext } from "@context/DialogContext";
+import { TasksContext } from "@context/TasksContext";
 
 interface TaskItemProps {
   task: TasksProps
@@ -12,7 +12,7 @@ interface TaskItemProps {
   onOpenDeleteDialog: (id: number) => void
 }
 
-export function TaskItem({ task, onToggleComplete, onOpenDeleteDialog }: TaskItemProps) {
+export function TaskItem({ task, onToggleComplete }: TaskItemProps) {
 
   const { setTaskId } = useContext(TasksContext)
   const { setDialogContent, setIsDialogOpen } = useContext(DialogContext)

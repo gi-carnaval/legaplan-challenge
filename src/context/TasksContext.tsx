@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { TasksProps } from '@components/tasksSection'
 
 
@@ -23,9 +23,13 @@ export const TasksContext = createContext<TasksContextType>({
 })
 
 export function TasksProvider({ children }: { children: React.ReactNode }) {
+  const storedLastId = localStorage.getItem('lastTaskId');
+  const lastTaskId = storedLastId ? JSON.parse(storedLastId) : -1;
+  const nextTaskId = Math.max(lastTaskId, 0);
+
   const [tasks, setTasks] = useState<TasksProps[]>([])
   const [taskId, setTaskId] = useState<number | null>(null)
-  const [idTaskList, setIdTaskList] = useState<number>(0)
+  const [idTaskList, setIdTaskList] = useState<number>(nextTaskId + 1)
 
   return (
     <TasksContext.Provider value={{ tasks, setTasks, taskId, setTaskId, idTaskList, setIdTaskList }}>

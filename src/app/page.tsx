@@ -2,8 +2,8 @@
 
 import { useContext, useEffect } from "react";
 import { TaskDialog } from "@components/taskDialog/taskDialog";
-import { Button } from "@ui/button/button";
-import { Dialog, DialogTrigger } from "@ui/dialog";
+import { Button } from "@components/ui/button/button";
+import { Dialog, DialogTrigger } from "@components/ui/dialog";
 import { TasksSection } from "@components/tasksSection/tasksSection";
 import { DialogContext } from "@context/DialogContext";
 import { TasksContext } from "@context/TasksContext";

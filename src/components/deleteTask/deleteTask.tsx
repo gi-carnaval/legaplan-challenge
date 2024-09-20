@@ -1,9 +1,9 @@
 import { Button } from "../ui/button/button";
-import { DialogClose, DialogTitle } from "@ui/dialog";
+import { DialogClose, DialogTitle } from "@components/ui/dialog";
 import "./styles.scss"
 import { useContext } from "react";
 import { TasksContext } from "@context/TasksContext";
-import { DialogContext } from "@app/src/context/DialogContext";
+import { DialogContext } from "@context/DialogContext";
 
 export function DeleteTask() {
 

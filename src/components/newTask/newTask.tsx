@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { Button } from "../ui/button/button";
-import { DialogClose, DialogTitle } from "@ui/dialog";
+import { DialogClose, DialogTitle } from "@components/ui/dialog";
 import "./styles.scss"
-import { TasksContext } from "@app/src/context/TasksContext";
-import { DialogContext } from "@app/src/context/DialogContext";
+import { TasksContext } from "@context/TasksContext";
+import { DialogContext } from "@context/DialogContext";
 
 export function NewTask() {
 
@@ -14,10 +14,15 @@ export function NewTask() {
 
   const handleAddTask = () => {
     const nextIdTask = idTaskList + 1
+    const newTaskObj = { id: nextIdTask, title: newTask, completed: false }
+
     setIdTaskList(nextIdTask)
-    const updatedTasks = [...tasks, { id: nextIdTask, title: newTask, completed: false }];
+    localStorage.setItem('lastTaskId', JSON.stringify(nextIdTask));
+
+    const updatedTasks = [...tasks, newTaskObj];
     setTasks(updatedTasks);
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+
     setNewTask('');
     setIsDialogOpen(false)
   };

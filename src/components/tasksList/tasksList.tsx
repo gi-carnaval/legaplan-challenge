@@ -1,5 +1,5 @@
 import { TaskItem } from "../taskItem/taskItem";
-import { TasksProps } from "@components/tasksSection/";
+import { TasksProps } from "@components/tasksSection";
 
 interface NotCompletedTasksListProps {
   tasks: TasksProps[];
