@@ -1,0 +1,26 @@
+.deleteTaskForm {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .deleteTaskButtons {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .deleteTaskForm {
+    margin-top: 0;
+
+    .deleteTaskButtons {
+      flex-direction: column-reverse;
+    }
+  }
+}

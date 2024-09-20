@@ -1,0 +1,45 @@
+.addNewTaksButton {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 16px 24px 16px 24px;
+  transition: filter 200ms;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.99);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.primary {
+  color: var(--background);
+  background: linear-gradient(90deg, rgba(7, 150, 211, 1), rgba(83, 192, 240, 1));
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+.secondary {
+  color: var(--foreground);
+  background: rgba(231, 238, 251, 1);
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
+
+.delete {
+  color: var(--background);
+  background: linear-gradient(90deg, rgba(211, 7, 7, 1), rgba(240, 83, 83, 1));
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}

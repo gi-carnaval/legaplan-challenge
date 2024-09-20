@@ -1,0 +1,107 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border: 1px dashed var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  &:hover {
+    background: var(--background-hover);
+    border: 1px solid var(--background-hover);
+  }
+
+  .checkbox {
+    display: flex;
+    gap: 1rem;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+      display: none;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+
+      &:checked~.checkbox__checkmark {
+        background-color: rgba(160, 220, 246, 1);
+        border: 1px solid rgba(7, 150, 211, 1);
+      }
+
+      &:checked~.checkbox__checkmark:after {
+        opacity: 1;
+      }
+    }
+
+    .checkbox__checkmark {
+      min-height: 1.5rem;
+      min-width: 1.5rem;
+      background-color: #fff;
+      border: 1px solid var(--border-color);
+      transition: background-color 0.25s ease;
+      border-radius: 4px;
+    }
+
+    .checkbox__checkmark:after {
+      content: "";
+      position: relative;
+      display: block;
+      left: 50%;
+      top: 50%;
+      width: 6.25px;
+      height: 12px;
+      border: solid rgb(7, 150, 211);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg) translate(-10%, 30%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .taskTitle {
+      color: var(--foreground);
+      line-height: 19.36px;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .completedTask {
+      text-decoration: line-through;
+      color: var(--secondary);
+    }
+
+  }
+
+  .excludeButton {
+    background-color: transparent;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.95);
+    }
+
+    &:active {
+      transform: scale(0.90);
+    }
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .task {
+    padding: 1rem 0.5rem;
+
+    .checkbox {
+      gap: 1rem;
+    }
+  }
+}

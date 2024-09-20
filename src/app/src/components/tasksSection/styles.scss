@@ -1,0 +1,41 @@
+.tasksSection {
+  border: 1px solid rgba(234, 236, 240, 1);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+
+  .tasksSectionTitle {
+    color: var(--secondary);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 19.36px;
+  }
+
+  .tasks {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .tasksSection {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .tasksSection {
+    padding: 1.5rem;
+
+    .tasks {
+      gap: 0.5rem;
+    }
+  }
+}
