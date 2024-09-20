@@ -35,27 +35,32 @@ export function TasksSection() {
   }
 
   return (
-    <section className="tasksSection">
+    <>
       {
-        notCompletedTasks.length > 0 && (
-          <TasksList
-            tasks={notCompletedTasks}
-            onToggleComplete={handleToggleComplete}
-            onOpenDeleteDialog={handleOpenDeleteDialog}
-            title="Suas tarefas de hoje"
-          />
-        )
-      }
-      {
-        completedTasks.length > 0 && (
-          <TasksList
-            tasks={completedTasks}
-            onToggleComplete={handleToggleComplete}
-            onOpenDeleteDialog={handleOpenDeleteDialog}
-            title="Tarefas finalizadas"
-          />
-        )
-      }
-    </section>
+        tasks.length > 0 && (
+          <section className="tasksSection">
+            {
+              notCompletedTasks.length > 0 && (
+                <TasksList
+                  tasks={notCompletedTasks}
+                  onToggleComplete={handleToggleComplete}
+                  onOpenDeleteDialog={handleOpenDeleteDialog}
+                  title="Suas tarefas de hoje"
+                />
+              )
+            }
+            {
+              completedTasks.length > 0 && (
+                <TasksList
+                  tasks={completedTasks}
+                  onToggleComplete={handleToggleComplete}
+                  onOpenDeleteDialog={handleOpenDeleteDialog}
+                  title="Tarefas finalizadas"
+                />
+              )
+            }
+          </section >
+        )}
+    </>
   )
 }

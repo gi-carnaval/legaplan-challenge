@@ -11,6 +11,11 @@ const inter = Inter_Tight({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: "FocalPoint App",
   description: "FocalPoint is an App by legaplan",
+  openGraph: {
+    title: "FocalPoint App",
+    description: "FocalPoint is an App by legaplan",
+    images: ['https://legaplan-challenge-giovani-carnaval.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.0e5f10dc.png&w=256&q=75']
+  }
 };
 
 export default function RootLayout({
